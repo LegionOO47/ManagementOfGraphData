@@ -7,7 +7,11 @@ services:
       - "7687:7687"   # Bolt protocol
     environment:
       NEO4J_AUTH: "neo4j/Qwertz123!"  # change password
-      NEO4JLABS_PLUGINS: '["apoc"]' # useful plugin
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_dbms_security_procedures_unrestricted: "apoc.*"
+      NEO4J_dbms_security_procedures_allowlist: "apoc.*"
+      NEO4J_apoc_import_file_enabled: "true"
+      NEO4J_apoc_export_file_enabled: "true"
     volumes:
       - ./data:/data
       - ./etl:/etl
