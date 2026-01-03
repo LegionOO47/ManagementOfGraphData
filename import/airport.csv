@@ -130,7 +130,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 130,Roberval Airport,Roberval,Canada,YRJ,CYRJ,48.52000045776367,-72.2656021118164,586,-5,A,America/Toronto,airport,OurAirports
 131,Rocky Mountain House Airport,Rocky Mountain House,Canada,YRM,CYRM,52.4296989441,-114.903999329,3244,-7,A,America/Edmonton,airport,OurAirports
 132,Rankin Inlet Airport,Rankin Inlet,Canada,YRT,CYRT,62.8114013672,-92.1157989502,94,-6,A,America/Winnipeg,airport,OurAirports
-133,Sudbury Airport,Sudbury,Canada,YSB,CYSB,46625,-80.79889678955078,1141,-5,A,America/Toronto,airport,OurAirports
+133,Sudbury Airport,Sudbury,Canada,YSB,CYSB,46.625,-80.79889678955078,1141,-5,A,America/Toronto,airport,OurAirports
 134,Sherbrooke Airport,Sherbrooke,Canada,YSC,CYSC,45.4385986328125,-71.69139862060547,792,-5,A,America/Toronto,airport,OurAirports
 135,Saint John Airport,St. John,Canada,YSJ,CYSJ,45.31610107421875,-65.89029693603516,357,-4,A,America/Halifax,airport,OurAirports
 136,Fort Smith Airport,Fort Smith,Canada,YSM,CYSM,60.020301818847656,-111.96199798583984,671,-7,A,America/Edmonton,airport,OurAirports
@@ -289,7 +289,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 290,Gafsa Ksar International Airport,Gafsa,Tunisia,GAF,DTTF,34.422000885009766,8.822500228881836,1060,1,E,Africa/Tunis,airport,OurAirports
 291,Gabès Matmata International Airport,Gabes,Tunisia,GAE,DTTG,33.87689971923828,10.103300094604492,26,1,E,Africa/Tunis,airport,OurAirports
 292,Borj El Amri Airport,Bordj El Amri,Tunisia,\N,DTTI,36.72129821777344,9.94314956665039,110,1,E,Africa/Tunis,airport,OurAirports
-293,Djerba Zarzis International Airport,Djerba,Tunisia,DJE,DTTJ,33875,10.775500297546387,19,1,E,Africa/Tunis,airport,OurAirports
+293,Djerba Zarzis International Airport,Djerba,Tunisia,DJE,DTTJ,33.875,10.775500297546387,19,1,E,Africa/Tunis,airport,OurAirports
 294,El Borma Airport,El Borma,Tunisia,EBM,DTTR,31.704299926757812,9.254619598388672,827,1,E,Africa/Tunis,airport,OurAirports
 295,Sfax Thyna International Airport,Sfax,Tunisia,SFA,DTTX,34.71799850463867,10.690999984741211,85,1,E,Africa/Tunis,airport,OurAirports
 296,Tozeur Nefta International Airport,Tozeur,Tunisia,TOE,DTTZ,33.939701080322266,8.110560417175293,287,1,E,Africa/Tunis,airport,OurAirports
@@ -595,7 +595,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 600,Ireland West Knock Airport,Connaught,Ireland,NOC,EIKN,53.910301208496094,-8.818490028381348,665,0,E,Europe/Dublin,airport,OurAirports
 601,Kerry Airport,Kerry,Ireland,KIR,EIKY,52.18090057373047,-9.52377986907959,112,0,E,Europe/Dublin,airport,OurAirports
 602,Casement Air Base,Casement,Ireland,\N,EIME,53.301700592,-6.451330184940001,319,0,E,Europe/Dublin,airport,OurAirports
-603,Shannon Airport,Shannon,Ireland,SNN,EINN,52702,-8.92482,46,0,E,Europe/Dublin,airport,OurAirports
+603,Shannon Airport,Shannon,Ireland,SNN,EINN,52.702,-8.92482,46,0,E,Europe/Dublin,airport,OurAirports
 604,Sligo Airport,Sligo,Ireland,SXL,EISG,54.280200958252,-8.5992097854614,11,0,E,Europe/Dublin,airport,OurAirports
 605,Waterford Airport,Waterford,Ireland,WAT,EIWF,52.187198638916016,-7.0869598388671875,119,0,E,Europe/Dublin,airport,OurAirports
 607,Aarhus Airport,Aarhus,Denmark,AAR,EKAH,56.2999992371,10.619000434899998,82,1,E,Europe/Copenhagen,airport,OurAirports
@@ -634,7 +634,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 641,"Harstad/Narvik Airport, Evenes",Harstad/Narvik,Norway,EVE,ENEV,68.491302490234,16.678100585938,84,1,E,Europe/Oslo,airport,OurAirports
 642,Leirin Airport,Fagernes,Norway,VDB,ENFG,61.015598297119,9.2880601882935,2697,1,E,Europe/Oslo,airport,OurAirports
 643,Florø Airport,Floro,Norway,FRO,ENFL,61.583599090576,5.0247201919556,37,1,E,Europe/Oslo,airport,OurAirports
-644,Oslo Lufthavn,Oslo,Norway,OSL,ENGM,60121,11.0502,681,1,E,Europe/Oslo,airport,OurAirports
+644,Oslo Lufthavn,Oslo,Norway,OSL,ENGM,60.121,11.0502,681,1,E,Europe/Oslo,airport,OurAirports
 645,Haugesund Airport,Haugesund,Norway,HAU,ENHD,59.34529876709,5.2083601951599,86,1,E,Europe/Oslo,airport,OurAirports
 646,Hasvik Airport,Hasvik,Norway,HAA,ENHK,70.486701965332,22.139699935913,21,1,E,Europe/Oslo,airport,OurAirports
 647,Kristiansund Airport (Kvernberget),Kristiansund,Norway,KSU,ENKB,63.111801147461,7.824520111084,204,1,E,Europe/Oslo,airport,OurAirports
@@ -953,7 +953,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 973,São Tomé International Airport,Sao Tome,Sao Tome and Principe,TMS,FPST,0.3781749904155731,6.7121500968933105,33,0,N,Africa/Sao_Tome,airport,OurAirports
 974,Beira Airport,Beira,Mozambique,BEW,FQBR,-19.79640007019043,34.90760040283203,33,2,U,Africa/Maputo,airport,OurAirports
 976,Inhambane Airport,Inhambane,Mozambique,INH,FQIN,-23.876399993896484,35.40850067138672,30,2,U,Africa/Maputo,airport,OurAirports
-977,Lichinga Airport,Lichinga,Mozambique,VXC,FQLC,-13274,35.2663,4505,2,U,Africa/Maputo,airport,OurAirports
+977,Lichinga Airport,Lichinga,Mozambique,VXC,FQLC,-13.274,35.2663,4505,2,U,Africa/Maputo,airport,OurAirports
 978,Lumbo Airport,Lumbo,Mozambique,LFB,FQLU,-15.0331001282,40.671699523899996,33,2,U,Africa/Maputo,airport,OurAirports
 979,Maputo Airport,Maputo,Mozambique,MPM,FQMA,-25.920799,32.572601,145,2,U,Africa/Maputo,airport,OurAirports
 980,Mueda Airport,Mueda,Mozambique,MUD,FQMD,-11.672900199890137,39.5630989074707,2789,2,U,Africa/Maputo,airport,OurAirports
@@ -1103,7 +1103,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 1129,Cairo West Airport,Cairo,Egypt,CWE,HECW,30.116399765,30.915399551399997,550,2,U,Africa/Cairo,airport,OurAirports
 1130,Hurghada International Airport,Hurghada,Egypt,HRG,HEGN,27.178300857543945,33.799400329589844,52,2,U,Africa/Cairo,airport,OurAirports
 1131,El Gora Airport,El Gorah,Egypt,EGH,HEGR,31.068559,34.129629,324,2,U,Africa/Cairo,airport,OurAirports
-1132,Luxor International Airport,Luxor,Egypt,LXR,HELX,25671,32.7066,294,2,U,Africa/Cairo,airport,OurAirports
+1132,Luxor International Airport,Luxor,Egypt,LXR,HELX,25.671,32.7066,294,2,U,Africa/Cairo,airport,OurAirports
 1133,Mersa Matruh Airport,Mersa-matruh,Egypt,MUH,HEMM,31.3253993988,27.221700668300002,94,2,U,Africa/Cairo,airport,OurAirports
 1134,Port Said Airport,Port Said,Egypt,PSD,HEPS,31.279399871826172,32.2400016784668,8,2,U,Africa/Cairo,airport,OurAirports
 1135,St Catherine International Airport,St. Catherine,Egypt,SKV,HESC,28.685300827,34.0625,4368,2,U,Africa/Cairo,airport,OurAirports
@@ -1312,7 +1312,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 1346,Lyon-Bron Airport,Lyon,France,LYN,LFLY,45.72719955444336,4.944270133972168,659,1,E,Europe/Paris,airport,OurAirports
 1347,Aix-en-Provence (BA 114) Airport,Aix-les-milles,France,\N,LFMA,43.5056,5.36778,367,1,E,Europe/Paris,airport,OurAirports
 1348,Le Luc-Le Cannet Airport,Le Luc,France,\N,LFMC,43.384700775146484,6.387139797210693,265,1,E,Europe/Paris,airport,OurAirports
-1349,Cannes-Mandelieu Airport,Cannes,France,CEQ,LFMD,43542,6.95348,13,1,E,Europe/Paris,airport,OurAirports
+1349,Cannes-Mandelieu Airport,Cannes,France,CEQ,LFMD,43.542,6.95348,13,1,E,Europe/Paris,airport,OurAirports
 1350,Saint-Étienne-Bouthéon Airport,St-Etienne,France,EBU,LFMH,45.54059982299805,4.296390056610107,1325,1,E,Europe/Paris,airport,OurAirports
 1351,Istres Le Tubé/Istres Air Base (BA 125) Airport,Istres,France,\N,LFMI,43.522701,4.92384,82,1,E,Europe/Paris,airport,OurAirports
 1352,Carcassonne Airport,Carcassonne,France,CCF,LFMK,43.215999603271484,2.3063199520111084,433,1,E,Europe/Paris,airport,OurAirports
@@ -1393,7 +1393,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 1427,Épinal-Mirecourt Airport,Epinal,France,EPL,LFSG,48.325001,6.06998,1084,1,E,Europe/Paris,airport,OurAirports
 1428,Haguenau Airport,Haguenau,France,\N,LFSH,48.7943000793,7.81760978699,491,1,E,Europe/Paris,airport,OurAirports
 1429,Saint-Dizier-Robinson (BA 113) Air Base,St.-dizier,France,\N,LFSI,48.63600158691406,4.899419784545898,458,1,E,Europe/Paris,airport,OurAirports
-1430,Montbéliard-Courcelles Airfield,Montbeliard,France,\N,LFSM,47487,6.79054,1041,1,E,Europe/Paris,airport,OurAirports
+1430,Montbéliard-Courcelles Airfield,Montbeliard,France,\N,LFSM,47.487,6.79054,1041,1,E,Europe/Paris,airport,OurAirports
 1431,Nancy-Essey Airport,Nancy,France,ENC,LFSN,48.692100524902344,6.230460166931152,751,1,E,Europe/Paris,airport,OurAirports
 1432,Nancy-Ochey (BA 133) Air Base,Nancy,France,\N,LFSO,48.583099365234375,5.954999923706055,1106,1,E,Europe/Paris,airport,OurAirports
 1433,Pontarlier Airport,Pontarlier,France,\N,LFSP,46.90399932861328,6.3273701667785645,2683,1,E,Europe/Paris,airport,OurAirports
@@ -1501,7 +1501,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 1540,Rivolto Air Base,Rivolto,Italy,\N,LIPI,45.978699,13.0493,179,1,E,Europe/Rome,airport,OurAirports
 1541,Forlì Airport,Forli,Italy,FRL,LIPK,44.194801,12.0701,97,1,E,Europe/Rome,airport,OurAirports
 1542,Ghedi Air Base,Ghedi,Italy,\N,LIPL,45.432201,10.2677,333,1,E,Europe/Rome,airport,OurAirports
-1543,Verona-Boscomantico Airport,Verona,Italy,\N,LIPN,45472,10.9279,286,1,E,Europe/Rome,airport,OurAirports
+1543,Verona-Boscomantico Airport,Verona,Italy,\N,LIPN,45.472,10.9279,286,1,E,Europe/Rome,airport,OurAirports
 1544,Brescia Airport,Brescia,Italy,VBS,LIPO,45.428902,10.3306,355,1,E,Europe/Rome,airport,OurAirports
 1545,Trieste–Friuli Venezia Giulia Airport,Ronchi De Legionari,Italy,TRS,LIPQ,45.827499,13.4722,39,1,E,Europe/Rome,airport,OurAirports
 1546,Federico Fellini International Airport,Rimini,Italy,RMI,LIPR,44.020302,12.6117,40,1,E,Europe/Rome,airport,OurAirports
@@ -1645,7 +1645,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 1688,Antalya International Airport,Antalya,Turkey,AYT,LTAI,36.898701,30.800501,177,3,E,Europe/Istanbul,airport,OurAirports
 1689,Gaziantep International Airport,Gaziantep,Turkey,GZT,LTAJ,36.9472007751,37.4786987305,2315,3,E,Europe/Istanbul,airport,OurAirports
 1690,İskenderun Airport,Iskenderun,Turkey,\N,LTAK,36.5744552612,36.1534194946,25,3,E,Europe/Istanbul,airport,OurAirports
-1691,Konya Airport,Konya,Turkey,KYA,LTAN,37979,32.561901,3392,3,E,Europe/Istanbul,airport,OurAirports
+1691,Konya Airport,Konya,Turkey,KYA,LTAN,37.979,32.561901,3392,3,E,Europe/Istanbul,airport,OurAirports
 1692,Malatya Tulga Airport,Malatya,Turkey,\N,LTAO,38.353699,38.253899,3016,3,E,Europe/Istanbul,airport,OurAirports
 1693,Amasya Merzifon Airport,Merzifon,Turkey,MZH,LTAP,40.829399,35.521999,1758,3,E,Europe/Istanbul,airport,OurAirports
 1694,Sivas Nuri Demirağ Airport,Sivas,Turkey,VAS,LTAR,39.813801,36.9035,5239,3,E,Europe/Istanbul,airport,OurAirports
@@ -1750,7 +1750,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 1805,General José María Yáñez International Airport,Guaymas,Mexico,GYM,MMGM,27.9689998626709,-110.92500305175781,59,-7,S,America/Hermosillo,airport,OurAirports
 1806,Tehuacan Airport,Tehuacan,Mexico,TCN,MMHC,18.49720001220703,-97.4198989868164,5509,-6,S,America/Mexico_City,airport,OurAirports
 1807,General Ignacio P. Garcia International Airport,Hermosillo,Mexico,HMO,MMHO,29.095899581900003,-111.047996521,627,-7,S,America/Hermosillo,airport,OurAirports
-1808,Licenciado Miguel de la Madrid Airport,Colima,Mexico,CLQ,MMIA,19277,-103.577002,2467,-6,S,America/Mexico_City,airport,OurAirports
+1808,Licenciado Miguel de la Madrid Airport,Colima,Mexico,CLQ,MMIA,19.277,-103.577002,2467,-6,S,America/Mexico_City,airport,OurAirports
 1809,Isla Mujeres Airport,Isla Mujeres,Mexico,ISJ,MMIM,21.2450008392334,-86.73999786376953,7,-5,S,America/Cancun,airport,OurAirports
 1810,Plan De Guadalupe International Airport,Saltillo,Mexico,SLW,MMIO,25.54949951171875,-100.92900085449219,4778,-6,S,America/Mexico_City,airport,OurAirports
 1811,Ixtepec Airport,Iztepec,Mexico,IZT,MMIT,16.449301,-95.093697,164,-6,S,America/Mexico_City,airport,OurAirports
@@ -1798,7 +1798,7 @@ Airport ID,Name,City,Country,IATA,ICAO,Latitude,Longitude,Altitude,Timezone,DST,
 1854,General Heriberto Jara International Airport,Vera Cruz,Mexico,VER,MMVR,19.1459007263,-96.1873016357,90,-6,S,America/Mexico_City,airport,OurAirports
 1855,General Leobardo C. Ruiz International Airport,Zacatecas,Mexico,ZCL,MMZC,22.8971004486,-102.68699646,7141,-6,S,America/Mexico_City,airport,OurAirports
 1856,Ixtapa Zihuatanejo International Airport,Zihuatanejo,Mexico,ZIH,MMZH,17.601600647,-101.460998535,26,-6,S,America/Mexico_City,airport,OurAirports
-1857,Zamora Airport,Zamora,Mexico,ZMM,MMZM,20045,-102.276001,5141,-6,S,America/Mexico_City,airport,OurAirports
+1857,Zamora Airport,Zamora,Mexico,ZMM,MMZM,20.045,-102.276001,5141,-6,S,America/Mexico_City,airport,OurAirports
 1858,Playa De Oro International Airport,Manzanillo,Mexico,ZLO,MMZO,19.144800186199998,-104.558998108,30,-6,S,America/Mexico_City,airport,OurAirports
 1859,Zapopan Airport,Zapopan,Mexico,\N,MMZP,20.747922,-103.461709,5333,-6,S,America/Mexico_City,airport,OurAirports
 1860,Bluefields Airport,Bluefields,Nicaragua,BEF,MNBL,11.991000175476074,-83.77410125732422,20,-6,U,America/Managua,airport,OurAirports

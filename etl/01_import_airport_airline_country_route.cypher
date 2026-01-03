@@ -7,19 +7,6 @@
   idsToSkip: []
 };
 
-// CONSTRAINT creation
-CREATE CONSTRAINT airportId_Airport_uniq IF NOT EXISTS
-FOR (n:Airport)
-REQUIRE n.airportId IS UNIQUE;
-
-CREATE CONSTRAINT airlineId_Airline_uniq IF NOT EXISTS
-FOR (n:Airline)
-REQUIRE n.airlineId IS UNIQUE;
-
-CREATE CONSTRAINT iso_Country_uniq IF NOT EXISTS
-FOR (n:Country)
-REQUIRE n.iso IS UNIQUE;
-
 //////////////////////////
 // LOAD AIRPORT NODES
 //////////////////////////
@@ -34,6 +21,26 @@ SET a.iata = row.IATA,
     a.countryName = row.Country,
     a.lat = toFloat(trim(row.Latitude)),
     a.lon = toFloat(trim(row.Longitude));
+
+// Because REQUIRE IS NOT NULL as a constraint is only possible on the enterprise license, this is manually enforcing this constraint.
+// It is technically not necessary because nothing in the dataset fails these constraints at the current moment but this futureproves the import.
+MATCH (a:Airport)
+WHERE a.lat IS NULL
+OR a.lon IS NULL
+OR a.airportId IS NULL
+DETACH DELETE a;
+
+
+//Some of the Airports have their latitude and longitude stored incorrectly in the dataset. i.e 46625 rather than 46.625
+//This adjusts them to the correct scale.
+MATCH (a:Airport)
+WHERE
+  a.lat IS NOT NULL AND a.lon IS NOT NULL AND
+  (abs(a.lat) > 90 OR abs(a.lon) > 180)
+SET
+  a.lat = a.lat / 1000.0,
+  a.lon = a.lon / 1000.0;
+
 
 //////////////////////////
 // LOAD AIRLINE NODES
@@ -72,3 +79,8 @@ SET r.airlinecode = row.Airline,
     r.equipment = row.Equipment,
     r.distance_km = toFloat(trim(row.distance));
 
+MATCH ()-[r:ROUTE]-()
+WHERE r.distance_km IS NULL
+OR r.airlineId IS NULL
+OR r.stops IS NULL
+DETACH DELETE r;
