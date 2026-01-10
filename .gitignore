@@ -1,1 +1,20 @@
 data/
+# --- Neo4j Database (CRITICAL) ---
+# Prevents uploading the heavy database files created by Docker
+neo4j_data/
+
+# --- Python ---
+# Prevents uploading compiled python files and caches
+__pycache__/
+*.pyc
+
+# --- Environment variables ---
+.env
+
+# --- IDE Settings (Optional) ---
+.vscode/
+.idea/
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db

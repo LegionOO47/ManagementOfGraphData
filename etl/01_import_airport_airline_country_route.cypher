@@ -1,5 +1,5 @@
 :param {
-  file_path_root: 'file:///', // Folder your files are accessible at
+  file_path_root: 'file:///',
   file_0: 'airport.csv',
   file_1: 'airlines.csv',
   file_2: 'countries.csv',

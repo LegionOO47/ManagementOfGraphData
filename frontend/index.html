@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 04 - Airplane Route Planner</title>
+    
+    <!-- Leaflet Map CSS (The style for the map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        /* CSS: Makes the page look nice */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; display: flex; height: 100vh; }
+        
+        /* Sidebar Styles */
+        #sidebar { width: 350px; padding: 20px; background: #f8f9fa; border-right: 1px solid #ddd; display: flex; flex-direction: column; box-shadow: 2px 0 5px rgba(0,0,0,0.1); z-index: 1000; }
+        h2 { color: #333; margin-top: 0; }
+        
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; color: #555; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        
+        button { width: 100%; padding: 12px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background 0.3s; }
+        button:hover { background: #218838; }
+
+        #results-container { flex-grow: 1; overflow-y: auto; margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px; }
+        .result-card { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; border-left: 5px solid #007bff; transition: transform 0.2s; }
+        .result-card:hover { transform: translateX(5px); background: #f0f8ff; }
+        .result-info { font-size: 14px; color: #666; }
+        .result-stats { font-weight: bold; color: #333; margin-bottom: 5px; }
+
+        /* Map Styles */
+        #map { flex-grow: 1; height: 100%; }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar for Inputs -->
+    <div id="sidebar">
+        <h2>✈️ Route Planner</h2>
+        
+        <div class="input-group">
+            <label>Source Airport ID</label>
+            <input type="number" id="srcId" placeholder="e.g. 340 (Frankfurt)">
+        </div>
+        
+        <div class="input-group">
+            <label>Destination Airport ID</label>
+            <input type="number" id="dstId" placeholder="e.g. 3797 (JFK)">
+        </div>
+        
+        <div class="input-group">
+            <label>Max Stops</label>
+            <input type="number" id="maxHops" value="3" min="1" max="5">
+        </div>
+
+        <div class="input-group">
+            <label>Avoid Country (Optional)</label>
+            <input type="text" id="avoidCountry" placeholder="e.g. France">
+        </div>
+
+        <button onclick="findRoutes()">Find Routes</button>
+        
+        <div id="results-container">
+            <p style="color:#777; text-align:center;">Enter IDs and click Find Routes</p>
+        </div>
+    </div>
+
+    <!-- The Map Area -->
+    <div id="map"></div>
+
+    <!-- Leaflet Map Library -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // --- 1. Initialize Map ---
+        // Centers on Europe/Atlantic by default
+        const map = L.map('map').setView([48.0, 10.0], 4); 
+        
+        // Add OpenStreetMap tiles (the visual map background)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        let mapLayers = []; // Store lines/markers to clear them later
+
+        // --- 2. The Main Function ---
+        async function findRoutes() {
+            const src = document.getElementById('srcId').value;
+            const dst = document.getElementById('dstId').value;
+            const hops = document.getElementById('maxHops').value;
+            const country = document.getElementById('avoidCountry').value;
+            const resultsDiv = document.getElementById('results-container');
+
+            // Basic Validation
+            if(!src || !dst) {
+                alert("Please enter both Source and Destination IDs!");
+                return;
+            }
+
+            resultsDiv.innerHTML = '<p style="text-align:center;">Searching routes... ⏳</p>';
+
+            // Build the API URL
+            let url = `http://127.0.0.1:8000/routes/search?src_id=${src}&dst_id=${dst}&max_hops=${hops}`;
+            if(country && country.trim() !== "") {
+                url += `&avoid_countries=${country.trim()}`;
+            }
+
+            try {
+                // Call Python Backend
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("Backend Error");
+                const routes = await response.json();
+
+                displayResults(routes);
+
+            } catch (error) {
+                console.error(error);
+                resultsDiv.innerHTML = '<p style="color:red; text-align:center;">Error connecting to server.<br>Is uvicorn running?</p>';
+            }
+        }
+
+        // --- 3. Display Results in Sidebar & Map ---
+        function displayResults(routes) {
+            const resultsDiv = document.getElementById('results-container');
+            resultsDiv.innerHTML = ""; // Clear loading message
+
+            // Clear previous map drawings
+            mapLayers.forEach(layer => map.removeLayer(layer));
+            mapLayers = [];
+
+            if (!routes || routes.length === 0) {
+                resultsDiv.innerHTML = '<p style="text-align:center;">No routes found! 🚫<br>Try increasing stops.</p>';
+                return;
+            }
+
+            // Loop through routes and create cards
+            routes.forEach((route, index) => {
+                const card = document.createElement('div');
+                card.className = 'result-card';
+                
+                // Calculate details
+                const stops = route.hops - 1; 
+                const dist = Math.round(route.total_distance);
+                const pathNames = route.airports.map(a => a.iata || a.id).join(' → ');
+
+                card.innerHTML = `
+                    <div class="result-stats">Option ${index + 1}: ${dist} km</div>
+                    <div class="result-info">
+                        Stops: ${stops}<br>
+                        Path: ${pathNames}
+                    </div>
+                `;
+                
+                // Clicking the card draws the route
+                card.onclick = () => drawRouteOnMap(route);
+                resultsDiv.appendChild(card);
+            });
+
+            // Automatically draw the first (best) route
+            drawRouteOnMap(routes[0]);
+        }
+
+        function drawRouteOnMap(route) {
+            // Clear map again (so we only see one route at a time)
+            mapLayers.forEach(layer => map.removeLayer(layer));
+            mapLayers = [];
+
+            const latlngs = [];
+            
+            // Add Markers for each Airport
+            route.airports.forEach(airport => {
+                if (airport.lat && airport.lon) {
+                    const marker = L.marker([airport.lat, airport.lon])
+                        .bindPopup(`<b>${airport.name}</b><br>${airport.city}, ${airport.country}`)
+                        .addTo(map);
+                    mapLayers.push(marker);
+                    latlngs.push([airport.lat, airport.lon]);
+                }
+            });
+
+            // Draw the Line (Polyline)
+            if (latlngs.length > 0) {
+                const polyline = L.polyline(latlngs, {color: 'blue', weight: 4, opacity: 0.7}).addTo(map);
+                mapLayers.push(polyline);
+                
+                // Zoom map to fit the route
+                map.fitBounds(polyline.getBounds(), {padding: [50, 50]});
+            }
+        }
+    </script>
+
+</body>
+</html>
