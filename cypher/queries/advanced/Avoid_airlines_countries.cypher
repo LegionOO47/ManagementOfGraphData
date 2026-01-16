@@ -14,7 +14,7 @@ CALL {
   MATCH p1 = (src)-[:ROUTE]->(dst)
   WHERE maxHops >= 1
     AND ALL(rel IN relationships(p1) WHERE rel.airlineId IN activeAirlineIds)
-    AND NONE(rel IN relationships(p1) WHERE rel.airlinecode IN blockedAirlines)
+    AND NONE(rel IN relationships(p1) WHERE rel.airlineId IN blockedAirlines)
     AND NONE(n IN nodes(p1)[1..-1] WHERE n.countryName IN blockedCountries)
   RETURN p1 AS path
 
@@ -24,7 +24,7 @@ CALL {
   MATCH p2 = (src)-[:ROUTE*2]->(dst)
   WHERE maxHops >= 2
     AND ALL(rel IN relationships(p2) WHERE rel.airlineId IN activeAirlineIds)
-    AND NONE(rel IN relationships(p2) WHERE rel.airlinecode IN blockedAirlines)
+    AND NONE(rel IN relationships(p2) WHERE rel.airlineId IN blockedAirlines)
     AND NONE(n IN nodes(p2)[1..-1] WHERE n.countryName IN blockedCountries)
   RETURN p2 AS path
 
@@ -34,7 +34,7 @@ CALL {
   MATCH p3 = (src)-[:ROUTE*3]->(dst)
   WHERE maxHops >= 3
     AND ALL(rel IN relationships(p3) WHERE rel.airlineId IN activeAirlineIds)
-    AND NONE(rel IN relationships(p3) WHERE rel.airlinecode IN blockedAirlines)
+    AND NONE(rel IN relationships(p3) WHERE rel.airlineId IN blockedAirlines)
     AND NONE(n IN nodes(p3)[1..-1] WHERE n.countryName IN blockedCountries)
   RETURN p3 AS path
 }
@@ -58,6 +58,8 @@ WITH path, hops, distanceKm,
 
 RETURN
   [n IN nodes(path) | n.iata] AS routeIataPath,
+    [n IN nodes(path) | n.city]        AS citiesPath,
+
   hops,
   distanceKm,
   airlinesIATA,

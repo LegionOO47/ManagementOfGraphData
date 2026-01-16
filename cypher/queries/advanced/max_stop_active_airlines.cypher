@@ -47,6 +47,7 @@ WITH path, hops, distanceKm, rels,
 
 RETURN
   [n IN nodes(path) | n.iata] AS routeIataPath,
+    [n IN nodes(path) | n.city]        AS citiesPath,
   hops,
   distanceKm,
   airlinesUsedCodes,
