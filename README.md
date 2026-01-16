@@ -2,11 +2,15 @@
 
 ## Docker
 To launch: docker compose up
+
 To close: docker compose down
+
 To force rebuild on next launch: docker compose down -v
 
 Neo4j weblink: http://localhost:7474/browser/
+
 user: neo4j
+
 password: Qwertz123!
 
 ## Data Model
