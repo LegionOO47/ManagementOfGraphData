@@ -190,7 +190,7 @@ export default function RoutePlanner() {
                   {(r.airlinesNames || r.airlinesUsedNames || []).join(", ")}
                 </TableCell>
               
-                <TableCell>{r.score ?? "-"}</TableCell>
+                <TableCell>{r.score !== undefined ? Math.round(r.score) : "-"}</TableCell>
               </TableRow>
               
               ))}

@@ -59,7 +59,7 @@ WITH path, hops, distanceKm, stops, score,
      apoc.coll.toSet([n IN nodes(path)[1..-1] | n.countryName]) AS transitCountries
 
 RETURN
-  score,
+  round(score) AS score,
   [n IN nodes(path) | n.iata] AS routeIataPath,
     [n IN nodes(path) | n.city]        AS citiesPath,
 
